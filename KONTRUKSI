@@ -1,0 +1,374 @@
+-- HANZ SCRIPT MENU
+-- GAME : TOWNSHIP
+-- MENU : KONTRUKSI
+-- MODER : HANZ
+
+-- 1. MEMBERSIHKAN RIWAYAT PENCARIAN
+gg.clearResults()
+
+-- 2. EFEK LOADING KEREN
+function HANZ_LOADING()
+    local frames = {"[ □ □ □ □ □ ]", "[ ■ □ □ □ □ ]", "[ ■ ■ □ □ □ ]", "[ ■ ■ ■ □ □ ]", "[ ■ ■ ■ ■ □ ]", "[ ■ ■ ■ ■ ■ ]"}
+    for i = 1, 2 do
+        for _, frame in ipairs(frames) do
+            gg.toast("⚡ LOADING SYSTEM ⚡\n" .. frame)
+            gg.sleep(100)
+        end
+    end
+    gg.toast("✅ READY TO USE")
+end
+
+-- 3. FUNGSI LOGIKA TIAP MENU (KOMPLIT & TERPISAH)
+
+function LOGIC_GLASS()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"GLASS: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "616C470Ah"
+        elseif name == "HANZ DATA 2" then item.value = "00007373h"
+        elseif name == "HANZ DATA 3" then item.value = "00000000h"
+        elseif name == "HANZ DATA 4" then item.value = "00000000h"
+        elseif name == "HANZ DATA 5" then item.value = "00000000h"
+        elseif name == "HANZ DATA 6" then item.value = "00000000h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ GLASS BERHASIL")
+end
+
+function LOGIC_BRICK()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"BRICK: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "6972420Ah"
+        elseif name == "HANZ DATA 2" then item.value = "00006B63h"
+        elseif name == "HANZ DATA 3" then item.value = "00000000h"
+        elseif name == "HANZ DATA 4" then item.value = "00000000h"
+        elseif name == "HANZ DATA 5" then item.value = "00000000h"
+        elseif name == "HANZ DATA 6" then item.value = "00000000h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ BRICK BERHASIL")
+end
+
+function LOGIC_SLAB()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"SLAB: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "696C500Ah"
+        elseif name == "HANZ DATA 2" then item.value = "00006174h"
+        elseif name == "HANZ DATA 3" then item.value = "00000000h"
+        elseif name == "HANZ DATA 4" then item.value = "00000000h"
+        elseif name == "HANZ DATA 5" then item.value = "00000000h"
+        elseif name == "HANZ DATA 6" then item.value = "00000000h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ SLAB BERHASIL")
+end
+
+function LOGIC_SHOVEL()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"SHOVEL: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "63697008h"
+        elseif name == "HANZ DATA 2" then item.value = "0000006Bh"
+        elseif name == "HANZ DATA 3" then item.value = "00000000h"
+        elseif name == "HANZ DATA 4" then item.value = "00000000h"
+        elseif name == "HANZ DATA 5" then item.value = "00000000h"
+        elseif name == "HANZ DATA 6" then item.value = "00000000h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ SHOVEL BERHASIL")
+end
+
+function LOGIC_AXE()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"AXE: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "65786106h"
+        elseif name == "HANZ DATA 2" then item.value = "00000000h"
+        elseif name == "HANZ DATA 3" then item.value = "00000000h"
+        elseif name == "HANZ DATA 4" then item.value = "00000000h"
+        elseif name == "HANZ DATA 5" then item.value = "00000000h"
+        elseif name == "HANZ DATA 6" then item.value = "00000000h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ AXE BERHASIL")
+end
+
+function LOGIC_SAW()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"SAW: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "544E5406h"
+        elseif name == "HANZ DATA 2" then item.value = "00000000h"
+        elseif name == "HANZ DATA 3" then item.value = "00000000h"
+        elseif name == "HANZ DATA 4" then item.value = "00000000h"
+        elseif name == "HANZ DATA 5" then item.value = "00000000h"
+        elseif name == "HANZ DATA 6" then item.value = "00000000h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ SAW BERHASIL")
+end
+
+function LOGIC_PAINT()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"PAINT: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "69617016h"
+        elseif name == "HANZ DATA 2" then item.value = "6552746Eh"
+        elseif name == "HANZ DATA 3" then item.value = "74614D64h"
+        elseif name == "HANZ DATA 4" then item.value = "00000000h"
+        elseif name == "HANZ DATA 5" then item.value = "00000000h"
+        elseif name == "HANZ DATA 6" then item.value = "00000000h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ PAINT BERHASIL")
+end
+
+function LOGIC_NAIL()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"NAIL: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "69616E0Eh"
+        elseif name == "HANZ DATA 2" then item.value = "74614D6Ch"
+        elseif name == "HANZ DATA 3" then item.value = "00000000h"
+        elseif name == "HANZ DATA 4" then item.value = "00000000h"
+        elseif name == "HANZ DATA 5" then item.value = "00000000h"
+        elseif name == "HANZ DATA 6" then item.value = "00000000h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ NAIL BERHASIL")
+end
+
+function LOGIC_HAMMER()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"HAMMER: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "6D616812h"
+        elseif name == "HANZ DATA 2" then item.value = "4D72656Dh"
+        elseif name == "HANZ DATA 3" then item.value = "72007461h"
+        elseif name == "HANZ DATA 4" then item.value = "00000002h"
+        elseif name == "HANZ DATA 5" then item.value = "1F5956E2h"
+        elseif name == "HANZ DATA 6" then item.value = "801032E8h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ HAMMER BERHASIL")
+end
+
+function LOGIC_JACKHAMMER()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"JACKHAMMER: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "63616A14h"
+        elseif name == "HANZ DATA 2" then item.value = "6D61686Bh"
+        elseif name == "HANZ DATA 3" then item.value = "0072656Dh"
+        elseif name == "HANZ DATA 4" then item.value = "65006B63h"
+        elseif name == "HANZ DATA 5" then item.value = "6C616972h"
+        elseif name == "HANZ DATA 6" then item.value = "00006500h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ JACKHAMMER BERHASIL")
+end
+
+function LOGIC_ELECT_SAW()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"ELECT SAW: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "776F7010h"
+        elseif name == "HANZ DATA 2" then item.value = "61737265h"
+        elseif name == "HANZ DATA 3" then item.value = "00720077h"
+        elseif name == "HANZ DATA 4" then item.value = "65006B63h"
+        elseif name == "HANZ DATA 5" then item.value = "6C616972h"
+        elseif name == "HANZ DATA 6" then item.value = "00006500h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ ELECTRIC SAW BERHASIL")
+end
+
+function LOGIC_DRILL()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"DRILL: Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ [KESALAHAN]\nNilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "6972640Ah"
+        elseif name == "HANZ DATA 2" then item.value = "61006C6Ch"
+        elseif name == "HANZ DATA 3" then item.value = "00720077h"
+        elseif name == "HANZ DATA 4" then item.value = "65006B63h"
+        elseif name == "HANZ DATA 5" then item.value = "6C616972h"
+        elseif name == "HANZ DATA 6" then item.value = "00006500h"
+        elseif name == "HANZ NILAI POINTER" then item.value = "0"
+        elseif name == "HANZ NILAI" then item.value = tostring(inputUser) end
+        if name:match("HANZ") then item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ DRILL BERHASIL")
+end
+
+-- 4. LOOP MENU UTAMA
+HANZ_LOADING()
+while true do
+    if gg.isVisible(true) then
+        gg.setVisible(false)
+        
+        local hanz_date = os.date("%A, %d %B %Y")
+        local hanz_time = os.date("%H:%M:%S")
+        local hanz_header = "📅 " .. hanz_date .. "\n⏰ " .. hanz_time .. 
+                            "\n━━━━━━━━━━━━━━━" ..
+                            "\n🎮 GAME : TOWNSHIP" ..
+                            "\n🛠️ MENU : KONTRUKSI" ..
+                            "\n👤 MODER : HANZ" ..
+                            "\n━━━━━━━━━━━━━━━"
+
+        local hanz_menu = gg.choice({
+            "1. GLASS", "2. BRICK", "3. SLAB", 
+            "4. SHOVEL", "5. AXE", "6. SAW", 
+            "7. PAINT", "8. NAIL", "9. HAMMER", 
+            "10. JACKHAMMER", "11. ELECTRIC SAW", "12. DRILL",
+            "❌ EXIT"
+        }, nil, hanz_header)
+
+        if hanz_menu == 1 then LOGIC_GLASS()
+        elseif hanz_menu == 2 then LOGIC_BRICK()
+        elseif hanz_menu == 3 then LOGIC_SLAB()
+        elseif hanz_menu == 4 then LOGIC_SHOVEL()
+        elseif hanz_menu == 5 then LOGIC_AXE()
+        elseif hanz_menu == 6 then LOGIC_SAW()
+        elseif hanz_menu == 7 then LOGIC_PAINT()
+        elseif hanz_menu == 8 then LOGIC_NAIL()
+        elseif hanz_menu == 9 then LOGIC_HAMMER()
+        elseif hanz_menu == 10 then LOGIC_JACKHAMMER()
+        elseif hanz_menu == 11 then LOGIC_ELECT_SAW()
+        elseif hanz_menu == 12 then LOGIC_DRILL()
+        elseif hanz_menu == 13 then os.exit() end
+    end
+    gg.sleep(150)
+end
+
