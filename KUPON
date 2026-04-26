@@ -1,0 +1,232 @@
+-- HANZ SCRIPT UPDATED
+gg.clearResults()
+
+-- Variabel Waktu & Tanggal
+local date = os.date("%d %B %Y")
+local time = os.date("%H:%M:%S")
+
+-- Efek Loading
+function LOADING()
+    local text = {"[ □ □ □ □ □ ]", "[ ■ □ □ □ □ ]", "[ ■ ■ □ □ □ ]", "[ ■ ■ ■ □ □ ]", "[ ■ ■ ■ ■ □ ]", "[ ■ ■ ■ ■ ■ ]"}
+    for i = 1, #text do
+        gg.toast("Sistem Loading... \n" .. text[i])
+        gg.sleep(200)
+    end
+end
+
+---------------------------------------------------------
+-- FUNGSI LOGIKA TIAP MENU
+---------------------------------------------------------
+
+function MENU_1() -- LOAD COUPON
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"Masukan nilai LOAD COUPON (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "756F432Ch" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "4C6E6F70h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "5464616Fh" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "6E696172h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "70726941h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "0074726Fh" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ LOAD COUPON BERHASIL")
+end
+
+function MENU_2() -- DEALER COUPON
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"Masukan nilai DEALER COUPON (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "756F4320h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "486E6F70h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "44657269h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "656C6165h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "00000072h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ DEALER COUPON BERHASIL")
+end
+
+function MENU_3() -- EXPANSION COUPON
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"Masukan nilai EXPANSION COUPON (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "6572661Ah" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "70784565h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "69736E61h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "00006E6Fh" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ EXPANSION COUPON BERHASIL")
+end
+
+function MENU_4() -- BARN UPGRADE COUPON
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"Masukan nilai BARN UPGRADE (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "65726618h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "626D4165h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "6E497261h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "00000063h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ BARN UPGRADE BERHASIL")
+end
+
+function MENU_5() -- FACTORY UPGRADE COUPON
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"Masukan nilai FACTORY UPGRADE (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "756F4328h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "556E6F70h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "61726770h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "61466564h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "726F7463h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000079h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ FACTORY UPGRADE BERHASIL")
+end
+
+function MENU_6() -- TRAIN UPGRADE COUPON
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"Masukan nilai TRAIN UPGRADE (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "756F4324h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "556E6F70h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "61726770h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "72546564h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "006E6961h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ TRAIN UPGRADE BERHASIL")
+end
+
+function MENU_7() -- ISLAND UPGRADE COUPON
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"Masukan nilai ISLAND UPGRADE (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!") return end
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "756F4326h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "556E6F70h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "61726770h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "73496564h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "646E616Ch" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    gg.setValues(updateList)
+    gg.addListItems(updateList)
+    gg.toast("✅ ISLAND UPGRADE BERHASIL")
+end
+
+---------------------------------------------------------
+-- TAMPILAN MENU UTAMA
+---------------------------------------------------------
+
+function MAIN()
+    local menu = gg.choice({
+        "1. LOAD COUPON",
+        "2. DEALER COUPON",
+        "3. EXPANSION COUPON",
+        "4. BARN UPGRADE COUPON",
+        "5. FACTORY UPGRADE COUPON",
+        "6. TRAIN UPGRADE COUPON",
+        "7. ISLAND UPGRADE COUPON",
+        "❌ KELUAR"
+    }, nil, "📅 " .. date .. " | 🕒 " .. time .. "\n━━━━━━━━━━━━━━━\nTOWNSHIP\nMENU COUPON 🎫")
+
+    if menu == 1 then MENU_1() end
+    if menu == 2 then MENU_2() end
+    if menu == 3 then MENU_3() end
+    if menu == 4 then MENU_4() end
+    if menu == 5 then MENU_5() end
+    if menu == 6 then MENU_6() end
+    if menu == 7 then MENU_7() end
+    if menu == 8 then os.exit() end
+    X = -1
+end
+
+-- Jalankan Script
+LOADING()
+while true do
+    if gg.isVisible(true) then
+        X = 1
+        gg.setVisible(false)
+    end
+    if X == 1 then MAIN() end
+end
+
