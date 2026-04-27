@@ -1,0 +1,144 @@
+-- KONFIGURASI HEADER
+local DATE = os.date("%A, %d %B %Y")
+local DEV = "HANZ"
+local GAME = "TOWNSHIP"
+local SECTION = "TAMBANG/MINE"
+
+-- 1. EFEK LOADING & CLEAR
+gg.toast("⏳ LOADER STARTING...")
+gg.sleep(600)
+gg.clearResults()
+for i = 1, 5 do
+    gg.toast("🌀 LOADING " .. string.rep(".", i))
+    gg.sleep(100)
+end
+
+-- 2. LOOP MENU OTOMATIS
+while true do
+    if gg.isVisible(true) then
+        gg.setVisible(false)
+        
+        local TIME = os.date("%H:%M:%S")
+        local menu = gg.choice({
+            "1. ⛏️ PICK",
+            "2. 🧨 DYNAMITE",
+            "3. 💣 TNT",
+            "4. 💎 ORE GALORE X2",
+            "❌ EXIT"
+        }, nil, 
+        "📅 " .. DATE .. " | ⌚ " .. TIME .. 
+        "\n🎮 GAME : " .. GAME .. 
+        "\n👤 DEV : " .. DEV .. 
+        "\n⚒️ MENU : " .. SECTION)
+
+        -- Pilihan 1: PICK
+        if menu == 1 then
+            local prompt = gg.prompt({"[PICK] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+            if prompt then
+                local inputUser = tonumber(prompt[1])
+                if inputUser <= 1000 then
+                    local savedList = gg.getListItems()
+                    local updateList = {}
+                    for _, item in ipairs(savedList) do
+                        if item.name == "HANZ DATA 1" then item.value = "00326D04h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 2" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 3" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 4" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 5" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+                    end
+                    gg.setValues(updateList)
+                    gg.addListItems(updateList)
+                    gg.toast("✅ PICK Berhasil!")
+                else
+                    gg.alert("⚠️ Max 1000!")
+                end
+            end
+
+        -- Pilihan 2: DYNAMITE
+        elseif menu == 2 then
+            local prompt = gg.prompt({"[DYNAMITE] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+            if prompt then
+                local inputUser = tonumber(prompt[1])
+                if inputUser <= 1000 then
+                    local savedList = gg.getListItems()
+                    local updateList = {}
+                    for _, item in ipairs(savedList) do
+                        if item.name == "HANZ DATA 1" then item.value = "00336D04h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 2" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 3" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 4" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 5" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+                    end
+                    gg.setValues(updateList)
+                    gg.addListItems(updateList)
+                    gg.toast("✅ DYNAMITE Berhasil!")
+                else
+                    gg.alert("⚠️ Max 1000!")
+                end
+            end
+
+        -- Pilihan 3: TNT
+        elseif menu == 3 then
+            local prompt = gg.prompt({"[TNT] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+            if prompt then
+                local inputUser = tonumber(prompt[1])
+                if inputUser <= 1000 then
+                    local savedList = gg.getListItems()
+                    local updateList = {}
+                    for _, item in ipairs(savedList) do
+                        if item.name == "HANZ DATA 1" then item.value = "00316D04h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 2" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 3" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 4" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 5" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+                    end
+                    gg.setValues(updateList)
+                    gg.addListItems(updateList)
+                    gg.toast("✅ TNT Berhasil!")
+                else
+                    gg.alert("⚠️ Max 1000!")
+                end
+            end
+
+        -- Pilihan 4: ORE GALORE X2
+        elseif menu == 4 then
+            local prompt = gg.prompt({"[ORE GALORE] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+            if prompt then
+                local inputUser = tonumber(prompt[1])
+                if inputUser <= 1000 then
+                    local savedList = gg.getListItems()
+                    local updateList = {}
+                    for _, item in ipairs(savedList) do
+                        if item.name == "HANZ DATA 1" then item.value = "6D69542Ch" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 2" then item.value = "6E456465h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 3" then item.value = "79746974h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 4" then item.value = "61776552h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 5" then item.value = "694D6472h" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ DATA 6" then item.value = "0031656Eh" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+                        if item.name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+                    end
+                    gg.setValues(updateList)
+                    gg.addListItems(updateList)
+                    gg.toast("✅ ORE GALORE Berhasil!")
+                else
+                    gg.alert("⚠️ Max 1000!")
+                end
+            end
+
+        elseif menu == 5 then 
+            print("Script Exit.")
+            os.exit() 
+        end
+    end
+    gg.sleep(100)
+end
