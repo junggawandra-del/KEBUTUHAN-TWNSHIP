@@ -1,0 +1,228 @@
+-- HANZ PROJECT - TOWNSHIP SCRIPT
+-- DATE: 28 April 2026
+
+function HANZ_START()
+    -- 1. CLEAR HASIL PENCARIAN
+    gg.clearResults()
+    
+    -- 2. EFEK LOADING
+    gg.toast("▓▒▒▒▒▒▒▒▒▒ 10%")
+    gg.sleep(200)
+    gg.toast("▓▓▓▒▒▒▒▒▒▒ 30%")
+    gg.sleep(200)
+    gg.toast("▓▓▓▓▓▓▒▒▒▒ 60%")
+    gg.sleep(200)
+    gg.toast("▓▓▓▓▓▓▓▓▓▒ 90%")
+    gg.sleep(200)
+    gg.toast("▓▓▓▓▓▓▓▓▓▓ 100%")
+    gg.sleep(200)
+    
+    HOME()
+end
+
+function HOME()
+    -- Ambil Waktu dan Tanggal Akurat
+    local date = os.date("%A, %d %B %Y")
+    local time = os.date("%H:%M:%S")
+
+    local menu = gg.choice({
+        "1. 🦁 ZOOKEEPER SET",
+        "2. 💎 RUBY PACK",
+        "❌ KELUAR"
+    }, nil, "📅 " .. date .. " | 🕒 " .. time .. "\n" ..
+            "━━━━━━━━━━━━━━━━━━━━━━━\n" ..
+            "🎮 GAME : TOWNSHIP\n" ..
+            "👤 DEV : HANZ\n" ..
+            "📦 MENU : PACK\n" ..
+            "━━━━━━━━━━━━━━━━━━━━━━━")
+
+    -- LOGIKA: Jika menu di-cancel (nil), script hanya akan berhenti (hide) 
+    -- dan akan muncul lagi saat icon GG ditekan (karena loop di bawah).
+    if menu == nil then 
+        return -- Hanya sembunyikan menu
+    elseif menu == 1 then 
+        LOGIK_ZOOKEEPER()
+    elseif menu == 2 then 
+        LOGIK_RUBY()
+    elseif menu == 3 then 
+        os.exit() 
+    end
+end
+
+-- ==========================================
+-- LOGIKA MENU 1: ZOOKEEPER SET
+-- ==========================================
+function LOGIK_ZOOKEEPER()
+    local savedList = gg.getListItems()
+    local updateList = {}
+
+    -- Tahap Input
+    local prompt = gg.prompt({
+        "🦁 [ZOOKEEPER] Masukan nilai (Maks 1000):"
+    }, {0}, {"number"})
+
+    if not prompt then return end
+    
+    local inputUser = tonumber(prompt[1])
+
+    -- Validasi
+    if inputUser > 1000 then
+        gg.alert("⚠️ [KESALAHAN / ERROR]\n\nNilai tidak boleh lebih dari 1000!\nValue cannot exceed 1000!")
+        return
+    end
+
+    -- Cek Saved List
+    if #savedList == 0 then
+        gg.toast("Saved List kosong!")
+        return
+    end
+
+    -- Iterasi Data (Redundan/Terpisah untuk Zookeeper)
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+
+        if name == "HANZ DATA 1" then
+            item.value = "6365642Ah"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 2" then
+            item.value = "333A4E6Bh"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 3" then
+            item.value = "3A432C30h"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 4" then
+            item.value = "552C3531h"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 5" then
+            item.value = "522C353Ah"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 6" then
+            item.value = "0000313Ah"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ NILAI POINTER" then
+            item.value = "0"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ NILAI" then
+            item.value = tostring(inputUser)
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+    end
+
+    -- Eksekusi
+    if #updateList > 0 then
+        gg.setValues(updateList)
+        gg.addListItems(updateList)
+        gg.toast("✅ ZOOKEEPER Berhasil diproses!")
+    else
+        gg.toast("⚠️ Data tidak ditemukan.")
+    end
+end
+
+-- ==========================================
+-- LOGIKA MENU 2: RUBY PACK
+-- ==========================================
+function LOGIK_RUBY()
+    local savedList = gg.getListItems()
+    local updateList = {}
+
+    -- Tahap Input
+    local prompt = gg.prompt({
+        "💎 [RUBY] Masukan nilai (Maks 1000):"
+    }, {0}, {"number"})
+
+    if not prompt then return end
+    
+    local inputUser = tonumber(prompt[1])
+
+    -- Validasi
+    if inputUser > 1000 then
+        gg.alert("⚠️ [KESALAHAN / ERROR]\n\nNilai tidak boleh lebih dari 1000!\nValue cannot exceed 1000!")
+        return
+    end
+
+    -- Cek Saved List
+    if #savedList == 0 then
+        gg.toast("Saved List kosong!")
+        return
+    end
+
+    -- Iterasi Data (Redundan/Terpisah untuk Ruby)
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+
+        if name == "HANZ DATA 1" then
+            item.value = "72614316h"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 2" then
+            item.value = "505F4364h"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 3" then
+            item.value = "356B6361h"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 4" then
+            item.value = "00000000h"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 5" then
+            item.value = "00000000h"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ DATA 6" then
+            item.value = "00000000h"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ NILAI POINTER" then
+            item.value = "0"
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+        if name == "HANZ NILAI" then
+            item.value = tostring(inputUser)
+            item.freeze = true
+            table.insert(updateList, item)
+        end
+    end
+
+    -- Eksekusi
+    if #updateList > 0 then
+        gg.setValues(updateList)
+        gg.addListItems(updateList)
+        gg.toast("✅ RUBY PACK Berhasil diproses!")
+    else
+        gg.toast("⚠️ Data tidak ditemukan.")
+    end
+end
+
+-- LOOPING AGAR SCRIPT OTOMATIS DITAMPILKAN
+while true do
+    if gg.isVisible(true) then
+        gg.setVisible(false)
+        HANZ_START()
+    end
+    gg.sleep(100)
+end
+
