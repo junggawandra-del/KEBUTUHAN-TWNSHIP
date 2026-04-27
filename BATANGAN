@@ -1,0 +1,156 @@
+-- HANZ SCRIPT LOADER
+-- GAME: TOWNSHIP
+
+gg.clearResults()
+
+-- Efek Loading Keren
+function LOADING_EFFECT()
+    local frames = {"▓▒░░░░░", "▓▓▒░░░░", "▓▓▓▒░░░", "▓▓▓▓▒░░", "▓▓▓▓▓▒░", "▓▓▓▓▓▓▒", "▓▓▓▓▓▓▓"}
+    for i = 1, #frames do
+        gg.toast("• [HANZ LOADER] •\n" .. frames[i] .. " Loading...")
+        gg.sleep(200)
+    end
+end
+
+-- ==========================================
+-- MENU 1: BRONZE INGOTS
+-- ==========================================
+function BRONZE_LOGIC()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"[BRONZE] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("Maksimal 1000!"); return end
+    if #savedList == 0 then gg.toast("Saved List kosong!"); return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "6F724228h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "42657A6Eh" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "696C6C75h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "6F436E6Fh" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "65746E75h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000072h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("✅ Bronze Berhasil!") end
+end
+
+-- ==========================================
+-- MENU 2: SILVER INGOTS
+-- ==========================================
+function SILVER_LOGIC()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"[SILVER] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("Maksimal 1000!"); return end
+    if #savedList == 0 then gg.toast("Saved List kosong!"); return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "6C695328h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "42726576h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "696C6C75h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "6F436E6Fh" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "65746E75h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000072h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("✅ Silver Berhasil!") end
+end
+
+-- ==========================================
+-- MENU 3: GOLD INGOTS
+-- ==========================================
+function GOLD_LOGIC()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"[GOLD] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("Maksimal 1000!"); return end
+    if #savedList == 0 then gg.toast("Saved List kosong!"); return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "6C6F4724h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "6C754264h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "6E6F696Ch" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "6E756F43h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "00726574h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("✅ Gold Berhasil!") end
+end
+
+-- ==========================================
+-- MENU 4: PLATINUM INGOTS
+-- ==========================================
+function PLATINUM_LOGIC()
+    local savedList = gg.getListItems()
+    local updateList = {}
+    local prompt = gg.prompt({"[PLATINUM] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+    if inputUser > 1000 then gg.alert("Maksimal 1000!"); return end
+    if #savedList == 0 then gg.toast("Saved List kosong!"); return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        if name == "HANZ DATA 1" then item.value = "616C502Ch" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "756E6974h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "6C75426Dh" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "6E6F696Ch" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "6E756F43h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00726574h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("✅ Platinum Berhasil!") end
+end
+
+-- ==========================================
+-- MENU UTAMA & OTOMATISASI
+-- ==========================================
+function MAIN_MENU()
+    local date = os.date("%A, %d %B %Y")
+    local time = os.date("%H:%M:%S")
+    
+    local menu = gg.choice({
+        "1. BRONZE INGOTS",
+        "2. SILVER INGOTS",
+        "3. GOLD INGOTS",
+        "4. PLATINUM INGOTS",
+        "❌ KELUAR"
+    }, nil, 
+    "📅 " .. date .. "\n⏰ " .. time .. 
+    "\n━━━━━━━━━━━━━━━\n🎮 GAME : TOWNSHIP\n👤 DEV : HANZ\n💎 MENU : BATANGAN/INGOTS\n━━━━━━━━━━━━━━━")
+
+    if menu == 1 then BRONZE_LOGIC() end
+    if menu == 2 then SILVER_LOGIC() end
+    if menu == 3 then GOLD_LOGIC() end
+    if menu == 4 then PLATINUM_LOGIC() end
+    if menu == 5 then os.exit() end
+    
+    HANZ_STATUS = -1
+end
+
+LOADING_EFFECT()
+
+-- Loop agar otomatis tampil saat ikon GG diklik
+while true do
+    if gg.isVisible(true) then
+        HANZ_STATUS = 1
+        gg.setVisible(false)
+    end
+    if HANZ_STATUS == 1 then
+        MAIN_MENU()
+    end
+end
