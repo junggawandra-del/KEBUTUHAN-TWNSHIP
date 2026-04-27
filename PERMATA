@@ -1,0 +1,180 @@
+-- SCRIPT BY HANZ
+-- GAME: TOWNSHIP
+
+-- ==========================================
+-- EFEK LOADING
+-- ==========================================
+function HANZ_LOADING()
+    local frames = {" ▒▒▒▒▒▒▒▒▒▒ 0%", " █▒▒▒▒▒▒▒▒▒ 10%", " ██▒▒▒▒▒▒▒▒ 20%", " ███▒▒▒▒▒▒▒ 30%", " ████▒▒▒▒▒▒ 40%", " █████▒▒▒▒▒ 50%", " ██████▒▒▒▒ 60%", " ███████▒▒▒ 70%", " ████████▒▒ 80%", " █████████▒ 90%", " ██████████ 100%"}
+    for _, frame in ipairs(frames) do
+        gg.toast("⏳ LOADING SYSTEM\n" .. frame)
+        gg.sleep(120)
+    end
+end
+
+-- ==========================================
+-- 1. LOGIKA KHUSUS TOPAZ
+-- ==========================================
+function HANZ_TOPAZ_LOGIC()
+    local savedList = gg.getListItems()
+    local updateList = {}
+
+    local prompt = gg.prompt({"[TOPAZ] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+
+    if inputUser > 1000 then
+        gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!")
+        return
+    end
+
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        -- Update Value Berdasarkan Hex Code Topaz
+        if name == "HANZ DATA 1" then item.value = "6D656708h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "00000031h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+
+    if #updateList > 0 then
+        gg.setValues(updateList)
+        gg.addListItems(updateList)
+        gg.toast("✅ TOPAZ Berhasil!")
+    else
+        gg.toast("⚠️ Data tidak ditemukan.")
+    end
+end
+
+-- ==========================================
+-- 2. LOGIKA KHUSUS EMERALD
+-- ==========================================
+function HANZ_EMERALD_LOGIC()
+    local savedList = gg.getListItems()
+    local updateList = {}
+
+    local prompt = gg.prompt({"[EMERALD] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+
+    if inputUser > 1000 then
+        gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!")
+        return
+    end
+
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        -- Update Value Berdasarkan Hex Code Emerald
+        if name == "HANZ DATA 1" then item.value = "6D656708h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "00000032h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+
+    if #updateList > 0 then
+        gg.setValues(updateList)
+        gg.addListItems(updateList)
+        gg.toast("✅ EMERALD Berhasil!")
+    else
+        gg.toast("⚠️ Data tidak ditemukan.")
+    end
+end
+
+-- ==========================================
+-- 3. LOGIKA KHUSUS RUBY
+-- ==========================================
+function HANZ_RUBY_LOGIC()
+    local savedList = gg.getListItems()
+    local updateList = {}
+
+    local prompt = gg.prompt({"[RUBY] Masukan nilai (Maks 1000):"}, {0}, {"number"})
+    if not prompt then return end
+    local inputUser = tonumber(prompt[1])
+
+    if inputUser > 1000 then
+        gg.alert("⚠️ Nilai tidak boleh lebih dari 1000!")
+        return
+    end
+
+    if #savedList == 0 then gg.toast("Saved List kosong!") return end
+
+    for _, item in ipairs(savedList) do
+        local name = item.name or ""
+        -- Update Value Berdasarkan Hex Code Ruby
+        if name == "HANZ DATA 1" then item.value = "6D656708h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 2" then item.value = "00000033h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 3" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 4" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 5" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ DATA 6" then item.value = "00000000h" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI POINTER" then item.value = "0" item.freeze = true table.insert(updateList, item) end
+        if name == "HANZ NILAI" then item.value = tostring(inputUser) item.freeze = true table.insert(updateList, item) end
+    end
+
+    if #updateList > 0 then
+        gg.setValues(updateList)
+        gg.addListItems(updateList)
+        gg.toast("✅ RUBY Berhasil!")
+    else
+        gg.toast("⚠️ Data tidak ditemukan.")
+    end
+end
+
+-- ==========================================
+-- TAMPILAN MENU UTAMA
+-- ==========================================
+function MAIN()
+    gg.clearResults()
+    
+    local date = os.date("%A, %d %B %Y")
+    local time = os.date("%X")
+    
+    local menu = gg.choice({
+        "1. 💎 TOPAZ",
+        "2. 💎 EMERALD",
+        "3. 💎 RUBY",
+        "❌ KELUAR"
+    }, nil, 
+    "━━━━━━━━━━━━━━━━━━━━━━\n" ..
+    "📅 " .. date .. "\n" ..
+    "⏰ " .. time .. "\n" ..
+    "━━━━━━━━━━━━━━━━━━━━━━\n" ..
+    "🎮 GAME : TOWNSHIP\n" ..
+    "👤 DEV  : HANZ\n" ..
+    "💎 MENU : GEMS/PERMATA\n" ..
+    "━━━━━━━━━━━━━━━━━━━━━━")
+
+    if menu == 1 then HANZ_TOPAZ_LOGIC() end
+    if menu == 2 then HANZ_EMERALD_LOGIC() end
+    if menu == 3 then HANZ_RUBY_LOGIC() end
+    if menu == 4 then os.exit() end
+    
+    HANZ_AUTO = -1 
+end
+
+-- JALANKAN LOADING SEKALI SAAT START
+HANZ_LOADING()
+
+-- LOOP OTOMATIS
+while true do
+    if gg.isVisible(true) then
+        HANZ_AUTO = 1
+        gg.setVisible(false)
+    end
+    if HANZ_AUTO == 1 then
+        MAIN()
+    end
+end
+
