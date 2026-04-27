@@ -1,0 +1,234 @@
+-- SCRIPT GAME GUARDIAN: TOWNSHIP
+-- DEVELOPER: HANZ
+
+-- Memastikan hasil pencarian bersih saat script dimulai
+gg.clearResults()
+
+-- FUNGSI EFEK LOADING
+function LOADING()
+    gg.toast("▓▒▒▒▒▒▒▒▒▒ 10%")
+    gg.sleep(100)
+    gg.toast("▓▓▓▒▒▒▒▒▒▒ 30%")
+    gg.sleep(100)
+    gg.toast("▓▓▓▓▓▒▒▒▒▒ 50%")
+    gg.sleep(100)
+    gg.toast("▓▓▓▓▓▓▓▒▒▒ 70%")
+    gg.sleep(100)
+    gg.toast("▓▓▓▓▓▓▓▓▓▓ 100%")
+    gg.sleep(100)
+    gg.toast("MENU READY")
+end
+
+-- LOADING AWAL
+LOADING()
+
+-- FUNGSI MENU UTAMA
+function HOME()
+    -- Mengambil data waktu dan tanggal
+    local date = os.date("%A, %d %B %Y")
+    local time = os.date("%H:%M:%S")
+    
+    local menu = gg.choice({
+        "1. 🚢 BOAT GOLD",
+        "2. 🛳️ BOAT GRAND",
+        "3. 🦎 LIZARD GOLD",
+        "4. 🦎 LIZARD GRAND",
+        "5. 🦇 BAT BASE",
+        "6. 🦇 BAT GRAND",
+        "7. ⚔️ SWORD GOLD",
+        "8. ⚔️ SWORD GRAND",
+        "❌ KELUAR"
+    }, nil, 
+    "📅 "..date.."\n" ..
+    "⏰ "..time.."\n" ..
+    "━━━━━━━━━━━━━━━━━━━━━━\n" ..
+    "GAME : TOWNSHIP\n" ..
+    "DEV  : HANZ\n" ..
+    "MENU : TITLE\n" ..
+    "━━━━━━━━━━━━━━━━━━━━━━")
+
+    if menu == 1 then L_1() end
+    if menu == 2 then L_2() end
+    if menu == 3 then L_3() end
+    if menu == 4 then L_4() end
+    if menu == 5 then L_5() end
+    if menu == 6 then L_6() end
+    if menu == 7 then L_7() end
+    if menu == 8 then L_8() end
+    if menu == 9 then os.exit() end
+    
+    -- Loop agar script otomatis ditampilkan kembali setelah eksekusi menu
+    X = -1
+end
+
+-- LOGIKA 1: BOAT GOLD
+function L_1()
+    local items = gg.getListItems()
+    if #items == 0 then gg.alert("Saved List kosong!") return end
+    local updateList = {}
+    for i, v in ipairs(items) do
+        local needsUpdate = false
+        if v.name == "HANZ DATA 1" then v.value = "50584520h" needsUpdate = true
+        elseif v.name == "HANZ DATA 2" then v.value = "6E61525Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 3" then v.value = "36345F6Bh" needsUpdate = true
+        elseif v.name == "HANZ DATA 4" then v.value = "7361625Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 5" then v.value = "00000065h" needsUpdate = true
+        elseif v.name == "HANZ DATA 6" then v.value = "00000000h" needsUpdate = true
+        elseif v.name == "HANZ NILAI POINTER" then v.value = "0" needsUpdate = true
+        elseif v.name == "HANZ NILAI" then v.value = "2" needsUpdate = true end
+        if needsUpdate then v.freeze = true table.insert(updateList, v) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("BOAT GOLD Berhasil!") end
+end
+
+-- LOGIKA 2: BOAT GRAND
+function L_2()
+    local items = gg.getListItems()
+    if #items == 0 then gg.alert("Saved List kosong!") return end
+    local updateList = {}
+    for i, v in ipairs(items) do
+        local needsUpdate = false
+        if v.name == "HANZ DATA 1" then v.value = "50584522h" needsUpdate = true
+        elseif v.name == "HANZ DATA 2" then v.value = "6E61525Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 3" then v.value = "36345F6Bh" needsUpdate = true
+        elseif v.name == "HANZ DATA 4" then v.value = "6172675Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 5" then v.value = "6F00646Eh" needsUpdate = true
+        elseif v.name == "HANZ DATA 6" then v.value = "00000000h" needsUpdate = true
+        elseif v.name == "HANZ NILAI POINTER" then v.value = "0" needsUpdate = true
+        elseif v.name == "HANZ NILAI" then v.value = "2" needsUpdate = true end
+        if needsUpdate then v.freeze = true table.insert(updateList, v) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("BOAT GRAND Berhasil!") end
+end
+
+-- LOGIKA 3: LIZARD GOLD
+function L_3()
+    local items = gg.getListItems()
+    if #items == 0 then gg.alert("Saved List kosong!") return end
+    local updateList = {}
+    for i, v in ipairs(items) do
+        local needsUpdate = false
+        if v.name == "HANZ DATA 1" then v.value = "50584520h" needsUpdate = true
+        elseif v.name == "HANZ DATA 2" then v.value = "6E61525Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 3" then v.value = "37345F6Bh" needsUpdate = true
+        elseif v.name == "HANZ DATA 4" then v.value = "7361625Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 5" then v.value = "00000065h" needsUpdate = true
+        elseif v.name == "HANZ DATA 6" then v.value = "00000000h" needsUpdate = true
+        elseif v.name == "HANZ NILAI POINTER" then v.value = "0" needsUpdate = true
+        elseif v.name == "HANZ NILAI" then v.value = "2" needsUpdate = true end
+        if needsUpdate then v.freeze = true table.insert(updateList, v) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("LIZARD GOLD Berhasil!") end
+end
+
+-- LOGIKA 4: LIZARD GRAND
+function L_4()
+    local items = gg.getListItems()
+    if #items == 0 then gg.alert("Saved List kosong!") return end
+    local updateList = {}
+    for i, v in ipairs(items) do
+        local needsUpdate = false
+        if v.name == "HANZ DATA 1" then v.value = "50584522h" needsUpdate = true
+        elseif v.name == "HANZ DATA 2" then v.value = "6E61525Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 3" then v.value = "37345F6Bh" needsUpdate = true
+        elseif v.name == "HANZ DATA 4" then v.value = "6172675Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 5" then v.value = "6F00646Eh" needsUpdate = true
+        elseif v.name == "HANZ DATA 6" then v.value = "00000000h" needsUpdate = true
+        elseif v.name == "HANZ NILAI POINTER" then v.value = "0" needsUpdate = true
+        elseif v.name == "HANZ NILAI" then v.value = "2" needsUpdate = true end
+        if needsUpdate then v.freeze = true table.insert(updateList, v) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("LIZARD GRAND Berhasil!") end
+end
+
+-- LOGIKA 5: BAT BASE
+function L_5()
+    local items = gg.getListItems()
+    if #items == 0 then gg.alert("Saved List kosong!") return end
+    local updateList = {}
+    for i, v in ipairs(items) do
+        local needsUpdate = false
+        if v.name == "HANZ DATA 1" then v.value = "50584520h" needsUpdate = true
+        elseif v.name == "HANZ DATA 2" then v.value = "6E61525Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 3" then v.value = "38345F6Bh" needsUpdate = true
+        elseif v.name == "HANZ DATA 4" then v.value = "7361625Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 5" then v.value = "00000065h" needsUpdate = true
+        elseif v.name == "HANZ DATA 6" then v.value = "00000000h" needsUpdate = true
+        elseif v.name == "HANZ NILAI POINTER" then v.value = "0" needsUpdate = true
+        elseif v.name == "HANZ NILAI" then v.value = "2" needsUpdate = true end
+        if needsUpdate then v.freeze = true table.insert(updateList, v) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("BAT BASE Berhasil!") end
+end
+
+-- LOGIKA 6: BAT GRAND
+function L_6()
+    local items = gg.getListItems()
+    if #items == 0 then gg.alert("Saved List kosong!") return end
+    local updateList = {}
+    for i, v in ipairs(items) do
+        local needsUpdate = false
+        if v.name == "HANZ DATA 1" then v.value = "50584522h" needsUpdate = true
+        elseif v.name == "HANZ DATA 2" then v.value = "6E61525Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 3" then v.value = "38345F6Bh" needsUpdate = true
+        elseif v.name == "HANZ DATA 4" then v.value = "6172675Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 5" then v.value = "0000646Eh" needsUpdate = true
+        elseif v.name == "HANZ DATA 6" then v.value = "00000000h" needsUpdate = true
+        elseif v.name == "HANZ NILAI POINTER" then v.value = "0" needsUpdate = true
+        elseif v.name == "HANZ NILAI" then v.value = "2" needsUpdate = true end
+        if needsUpdate then v.freeze = true table.insert(updateList, v) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("BAT GRAND Berhasil!") end
+end
+
+-- LOGIKA 7: SWORD GOLD
+function L_7()
+    local items = gg.getListItems()
+    if #items == 0 then gg.alert("Saved List kosong!") return end
+    local updateList = {}
+    for i, v in ipairs(items) do
+        local needsUpdate = false
+        if v.name == "HANZ DATA 1" then v.value = "50584520h" needsUpdate = true
+        elseif v.name == "HANZ DATA 2" then v.value = "6E61525Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 3" then v.value = "39345F6Bh" needsUpdate = true
+        elseif v.name == "HANZ DATA 4" then v.value = "7361625Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 5" then v.value = "00000065h" needsUpdate = true
+        elseif v.name == "HANZ DATA 6" then v.value = "00000000h" needsUpdate = true
+        elseif v.name == "HANZ NILAI POINTER" then v.value = "0" needsUpdate = true
+        elseif v.name == "HANZ NILAI" then v.value = "2" needsUpdate = true end
+        if needsUpdate then v.freeze = true table.insert(updateList, v) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("SWORD GOLD Berhasil!") end
+end
+
+-- LOGIKA 8: SWORD GRAND
+function L_8()
+    local items = gg.getListItems()
+    if #items == 0 then gg.alert("Saved List kosong!") return end
+    local updateList = {}
+    for i, v in ipairs(items) do
+        local needsUpdate = false
+        if v.name == "HANZ DATA 1" then v.value = "50584522h" needsUpdate = true
+        elseif v.name == "HANZ DATA 2" then v.value = "6E61525Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 3" then v.value = "39345F6Bh" needsUpdate = true
+        elseif v.name == "HANZ DATA 4" then v.value = "6172675Fh" needsUpdate = true
+        elseif v.name == "HANZ DATA 5" then v.value = "0000646Eh" needsUpdate = true
+        elseif v.name == "HANZ DATA 6" then v.value = "00000000h" needsUpdate = true
+        elseif v.name == "HANZ NILAI POINTER" then v.value = "0" needsUpdate = true
+        elseif v.name == "HANZ NILAI" then v.value = "2" needsUpdate = true end
+        if needsUpdate then v.freeze = true table.insert(updateList, v) end
+    end
+    if #updateList > 0 then gg.setValues(updateList) gg.addListItems(updateList) gg.toast("SWORD GRAND Berhasil!") end
+end
+
+-- LOOPING OTOMATIS
+while true do
+    if gg.isVisible(true) then
+        X = 1
+        gg.setVisible(false)
+    end
+    if X == 1 then
+        HOME()
+    end
+end
+
